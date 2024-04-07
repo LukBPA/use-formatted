@@ -65,7 +65,6 @@ const useFormattedData = (data: Person[]): FormatedData => {
    */
   const sortData = useCallback(
     (sortBy: string, dataToFormat: Person[]): Promise<Person[]> => {
-      console.log("formatted data 2", formatted);
       if (!(sortBy in data[0])) {
         // Handle the case when sortBy is not a valid key in Person model.
       }
@@ -91,7 +90,6 @@ const useFormattedData = (data: Person[]): FormatedData => {
    */
   const filterData = useCallback(
     (filterFunction: (item: any) => boolean, dataToFormat: Person[]): Promise<Person[]> => {
-      console.log("formatted data 3", formatted);
       const filteredData = dataToFormat.filter(filterFunction);
       return Promise.resolve(filteredData);
     },
